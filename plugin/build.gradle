@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+
+dependencies {
+    //gradle sdk
+    implementation gradleApi()
+    implementation localGroovy()
+    //groovy sdk
+    compile 'com.android.tools.build:gradle:3.3.0'
+    compile 'org.ow2.asm:asm:6.0'
+    compile 'org.ow2.asm:asm-commons:6.0'
+}
+repositories {
+    jcenter()
+}
+
+
+def mirror_version = "1.0.0"
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri('../repo'))
+        pom.groupId = 'com.sunhee'
+        pom.artifactId = 'mirror-plugin'
+        pom.version = "$mirror_version"
+    }
+}
