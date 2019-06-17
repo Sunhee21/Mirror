@@ -5,12 +5,10 @@ package com.sunhee.lib_insertdemo;
  * @intro
  * @date 2019/6/17
  */
-public class B {
+public class C {
 
 
     public void function(){
-
-        new C().function();
 
     }
 

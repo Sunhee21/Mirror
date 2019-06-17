@@ -2,6 +2,7 @@ package com.sunhee.asm
 
 import com.android.build.api.transform.*
 import com.android.build.gradle.internal.pipeline.TransformManager
+import com.google.common.collect.Sets
 import com.sunhee.utils.MirrorCheckUtil
 import com.sunhee.utils.MLogger
 import com.sunhee.utils.MirrorClassNameUtil
@@ -28,6 +29,15 @@ class MirrorTransform extends Transform {
     String getName() {
         return "MirrorTransform"
     }
+    public static final  Set<QualifiedContent.Scope> P =
+            Sets.immutableEnumSet(
+                    QualifiedContent.Scope.PROJECT,
+                    QualifiedContent.Scope.SUB_PROJECTS,
+                    QualifiedContent.Scope.EXTERNAL_LIBRARIES,
+//                    QualifiedContent.Scope.SUB_PROJECTS_LOCAL_DEPS,
+//                    QualifiedContent.Scope.PROJECT_LOCAL_DEPS,
+            )
+
 
     @Override
     Set<QualifiedContent.ContentType> getInputTypes() { // 指明你自定义的这个Transform处理的输入类型为class
@@ -36,7 +46,7 @@ class MirrorTransform extends Transform {
 
     @Override
     Set<? super QualifiedContent.Scope> getScopes() {//指明自定的Transform的输入文件所属的范围,仅当前工程代码 或其他。
-        return TransformManager.SCOPE_FULL_PROJECT//这里包含 当前工程 子工程 和 EXTERNAL_LIBRARIES
+        return P//这里包含 当前工程 子工程 和 EXTERNAL_LIBRARIES
     }
 
     @Override

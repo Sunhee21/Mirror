@@ -3,7 +3,7 @@
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
-version = "1.0.1"
+version = "1.0.2" //发布的版本号
 
 
 // 定义两个链接，下面会用到。
