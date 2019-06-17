@@ -25,11 +25,13 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
+    implementation 'com.sunhee:mirror_annotations:1.0.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
 mirror {
-    filter = ["com.sunhee.mirrordemo.ui","com.sunhee.mirrordemo.test2"]
-    isDebug = true
+    filter = ["com.sunhee.mirrordemo.ui","com.sunhee.mirrordemo.test2"]//要打印的包或者类名com.sunhee.mirrordemo.ui.MirrorActivity
+    isDebug = false //build日志开关
+    annotation = false //开启注解后只有注解标记才会打印日志，要依赖implementation 'com.sunhee:mirror_annotations:1.0.0'
 }

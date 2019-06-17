@@ -1,1 +1,1 @@
-include ':app', ':plugin', ':mirror_annotations'
+include ':app', ':mirror_plugin', ':mirror_annotations'

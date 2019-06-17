@@ -2,6 +2,8 @@ apply plugin: 'groovy'
 apply plugin: 'maven'
 
 
+apply from: '../bintray.gradle'
+
 dependencies {
     //gradle sdk
     implementation gradleApi()
@@ -15,6 +17,7 @@ repositories {
     jcenter()
 }
 
+group = 'com.sunhee.mirror'
 
 def mirror_version = "1.0.0"
 
@@ -26,3 +29,4 @@ uploadArchives {
         pom.version = "$mirror_version"
     }
 }
+

@@ -6,11 +6,12 @@ package com.sunhee.mirror
 class MirrorExtension {
 
 
+  boolean annotation = false
 
   /**
    * 日志开关
    */
-  boolean isDebug = false
+  boolean isDebug = true
 
   /**
    * 要显示的类或包

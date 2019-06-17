@@ -9,7 +9,17 @@ package com.sunhee.asm;
  */
 class MirrorConfig {
 
+    public static boolean anno
+
     public static HashSet<String> filter
+
+    static boolean getAnnotation() {
+        return anno
+    }
+
+    static void setAnnotation(boolean a) {
+        anno = a
+    }
 
     static HashSet<String> getFilter() {
         return filter

@@ -27,10 +27,9 @@ class MirrorCheckUtil {
         int size = MirrorConfig.getFilter().size()
         while (filter.hasNext()){
             String fn = filter.next()
-            MLogger.info("此次的过滤设置2: " + fn + className.startsWith(fn))
             if (className.startsWith(fn))return true //设置了根据设置的返回true
         }
-        MLogger.info("此次的过滤设置3: " +filter.size() == 0)
+
         return size == 0 //没设置默认显示所有
 
     }

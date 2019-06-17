@@ -13,7 +13,7 @@ class MirrorPlugin implements Plugin<Project> {
     void apply(Project project) {
 
 //        project.dependencies {
-//            compile project(':mirror_annotations')
+//            compile 'com.sunhee:mirror_annotations:1.0.0'
 //        }
 
         project.extensions.create("mirror", MirrorExtension)
@@ -30,6 +30,8 @@ class MirrorPlugin implements Plugin<Project> {
 
             //解析mirror配置的参数
             MLogger.setDebug(project.mirror.isDebug)
+            MirrorConfig.setAnnotation(project.mirror.annotation)
+
             List<String> filterPackges = project.mirror.filter
             HashSet<String> filterPackgesSet = new HashSet<>()
             if (filterPackges != null) {

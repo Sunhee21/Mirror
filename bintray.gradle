@@ -1,0 +1,69 @@
+
+// 应用插件
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+version = "1.0.0"
+
+
+// 定义两个链接，下面会用到。
+def siteUrl = 'https://github.com/Sunhee21/Mirror' // 项目主页。
+def gitUrl = 'https://github.com/Sunhee21/Mirror.git' // Git仓库的url。
+
+group = "com.sunhee"
+
+install {
+    repositories {
+        mavenInstaller {
+            // This generates POM.xml with proper paramters
+            pom.project {
+
+                //添加项目描述
+                name 'Gradle Plugin for Android'
+                url siteUrl
+
+                //设置开源证书信息
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                //添加开发者信息
+                developers {
+                    developer {
+                        name DEVELOPER_NAME
+                        email DEVELOPER_MAIL
+                    }
+                }
+
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+
+    }
+}
+
+
+//Properties properties = new Properties()
+//properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = DEVELOPER_NAME // Bintray的用户名。
+    key = DEVELOPER_API_KEY // Bintray刚才保存的ApiKey。
+
+    configurations = ['archives']
+    pkg {
+        repo = "maven"  // 上传到maven库。（这里要特别注意，如果写了maven报404错误，请在bintray创建一个仓库，这里填改成你创建的仓库的名字，如何创建请看下图。）
+        name = "mirror_plugin"  // 发布到Bintray上的项目名字，这里的名字不是compile 'com.yanzhenjie:andserver:1.0.1'中的andserver。
+        userOrg = DEVELOPER_NAME // Bintray的用户名，2016年11月更新。
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        labels = ['gradle', 'plugin']
+        licenses = ["Apache-2.0"]
+        publish = true // 是否是公开项目。
+    }
+}

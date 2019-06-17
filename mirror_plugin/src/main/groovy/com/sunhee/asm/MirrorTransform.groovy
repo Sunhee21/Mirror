@@ -68,7 +68,6 @@ class MirrorTransform extends Transform {
 
                         def name = file.name
                         if (name.endsWith(".class") && MirrorCheckUtil.isShouldModifyClass(finalClassName)) {
-                            System.out.println("目录")
                             ClassReader reader = new ClassReader(file.bytes)
                             ClassWriter writer = new ClassWriter(reader, ClassWriter.COMPUTE_MAXS)
                             ClassVisitor visitor = new MirrorClassVisitor(writer)
