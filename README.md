@@ -43,7 +43,7 @@ implementation'com.sunhee:mirror_annotations:1.0.0'
 ```
 日志输出：
 ```
-2019-06-17 17:42:36.902 30281-30281/? D/com/csh/application/main/mvp/ui/activity/DBTestActivity$onCreate: 142
+2019-06-17 17:42:36.902 30281-30281/? D/com/csh/application/main/mvp/ui/activity/DBTestActivity<Mirror>onCreate: 142
 
 142就代表耗时142毫秒
 ```
