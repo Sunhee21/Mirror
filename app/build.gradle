@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.sunhee.mirror.plugin'
 
 
 android {
@@ -30,8 +29,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
+apply plugin: 'com.sunhee.mirror.plugin'
+
 mirror {
-    filter = ["com.sunhee.mirrordemo.ui","com.sunhee.mirrordemo.test2"]//要打印的包或者类名com.sunhee.mirrordemo.ui.MirrorActivity
-    isDebug = false //build日志开关
+    filter = ["com.sunhee.mirrordemo"]//要打印的包或者类名com.sunhee.mirrordemo.ui.MirrorActivity
+    isDebug = true //build日志开关
     annotation = false //开启注解后只有注解标记才会打印日志，要依赖implementation 'com.sunhee:mirror_annotations:1.0.0'
 }

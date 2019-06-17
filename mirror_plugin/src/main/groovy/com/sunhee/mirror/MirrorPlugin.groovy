@@ -22,9 +22,11 @@ class MirrorPlugin implements Plugin<Project> {
         System.out.println("========================");
 
         //使用Transform实行遍历
+
         def android = project.extensions.getByType(AppExtension)//AppExtension 就是build.gradle里的android{} 这一块
         registerTransform(android) //Transform 在afterEvaluate 之后执行
-
+//        def library = project.extensions.getByType(LibraryExtension)
+//        registerTransform(library) //Transform 在afterEvaluate 之后执行
 
         project.afterEvaluate {
 
