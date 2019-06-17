@@ -9,7 +9,7 @@ buildscript {
     repositories {
       maven {
         url  "https://dl.bintray.com/sunhee/maven"
-      }
+      }//由于还没添加到Jcenter所以要加一段
     }
     dependencies {
         classpath 'com.sunhee.mirror:mirror_plugin:1.0.0'
@@ -19,7 +19,7 @@ allprojects {
     repositories {
         maven {
             url  "https://dl.bintray.com/sunhee/maven"
-        }
+        }}//由于还没添加到Jcenter所以要加一段
     }
 }
 ```
