@@ -1,5 +1,7 @@
 Mirror
+
 简介：埋点计时Gradle插件,利用ASM插入字节码，对指定包名内的类，打印所有方法的耗时时间。
+
 用法：
 项目的build.gradle配置
 ```
@@ -8,7 +10,7 @@ buildscript {
       maven {
         url  "https://dl.bintray.com/sunhee/maven"
       }
-    }   
+    }
     dependencies {
         classpath 'com.sunhee.mirror:mirror_plugin:1.0.0'
     }
@@ -34,3 +36,11 @@ mirror {
     //@MirrorLog 对方法使用此注解标记打印该方法耗时
 }
 ```
+
+日志输出：
+```
+2019-06-17 17:42:36.902 30281-30281/? D/com/csh/application/main/mvp/ui/activity/DBTestActivity$onCreate: 142
+
+142就代表耗时142毫秒
+```
+
