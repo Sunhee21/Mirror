@@ -3,10 +3,10 @@
   <groupId>com.sunhee</groupId>
   <artifactId>mirror-plugin</artifactId>
   <versioning>
-    <release>1.0.1</release>
+    <release>1.0.3</release>
     <versions>
-      <version>1.0.1</version>
+      <version>1.0.3</version>
     </versions>
-    <lastUpdated>20190617092824</lastUpdated>
+    <lastUpdated>20190617102145</lastUpdated>
   </versioning>
 </metadata>

@@ -53,7 +53,7 @@ public class MirrorMethodTimerAdapter extends AdviceAdapter {
     @Override
     protected void onMethodExit(int opcode) {
         if (isInsert) {
-            mv.visitLdcInsn(mClassName + "\$" + mMethodName)//用方法名表示Log 的TAG
+            mv.visitLdcInsn(mClassName + "<Mirror>" + mMethodName)//用方法名表示Log 的TAG
             mv.visitMethodInsn(INVOKESTATIC, "java/lang/System", "currentTimeMillis", "()J", false);
             mv.visitVarInsn(LLOAD, timerId)
             mv.visitInsn(LSUB)//表示（System.currentTimeMillis - 方法开始时间）的值

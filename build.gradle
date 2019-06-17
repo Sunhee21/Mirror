@@ -14,7 +14,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0'
 //        // 导入Mirror插件依赖
-        classpath 'com.sunhee:mirror-plugin:1.0.1'//Local
+        classpath 'com.sunhee:mirror-plugin:1.0.3'//Local
 
 //        classpath 'com.sunhee.mirror:mirror_plugin:1.0.0'//Maven
 

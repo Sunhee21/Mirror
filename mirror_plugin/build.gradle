@@ -19,7 +19,7 @@ repositories {
 
 group = 'com.sunhee.mirror'
 
-def mirror_version = "1.0.2"
+def mirror_version = "1.0.3"
 
 //更新本地库用的
 uploadArchives {
