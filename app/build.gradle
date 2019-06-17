@@ -27,12 +27,13 @@ dependencies {
     implementation 'com.sunhee:mirror_annotations:1.0.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':lib_insertdemo')
 }
 
 apply plugin: 'com.sunhee.mirror.plugin'
 
 mirror {
-    filter = ["com.sunhee.mirrordemo"]//要打印的包或者类名com.sunhee.mirrordemo.ui.MirrorActivity
+    filter = []//要打印的包或者类名com.sunhee.mirrordemo.ui.MirrorActivity
     isDebug = true //build日志开关
     annotation = false //开启注解后只有注解标记才会打印日志，要依赖implementation 'com.sunhee:mirror_annotations:1.0.0'
 }

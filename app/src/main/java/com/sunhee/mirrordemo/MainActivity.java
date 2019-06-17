@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.sunhee.lib_insertdemo.B;
 import com.sunhee.mirrordemo.ui.MirrorActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MirrorActivity.class));
             }
         });
+        new B().function();
     }
 
 
