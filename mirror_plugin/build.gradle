@@ -9,7 +9,7 @@ dependencies {
     implementation gradleApi()
     implementation localGroovy()
     //groovy sdk
-    compile 'com.android.tools.build:gradle:3.3.0'
+    compile 'com.android.tools.build:gradle:3.1.0'
     compile 'org.ow2.asm:asm:6.0'
     compile 'org.ow2.asm:asm-commons:6.0'
 }
@@ -19,7 +19,7 @@ repositories {
 
 group = 'com.sunhee.mirror'
 
-def mirror_version = "1.0.3"
+def mirror_version = "1.0.4"
 
 //更新本地库用的
 uploadArchives {
