@@ -12,7 +12,7 @@ buildscript {
       }//因为还没有添加到Jcenter 要加这一句
     }
     dependencies {
-        classpath 'com.sunhee.mirror:mirror_plugin:1.0.4'
+        classpath 'com.sunhee.mirror:mirror_plugin:1.0.5'
     }
 }
 allprojects {
